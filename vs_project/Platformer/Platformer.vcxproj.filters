@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Pliki źródłowe">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Pliki zasobów">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\SDL2">
+      <UniqueIdentifier>{0f9ab297-0934-4740-96bf-6be6733ced5c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\SDL2\begin_code.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\close_code.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_assert.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_atomic.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_audio.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_bits.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_blendmode.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_clipboard.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_config.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_config_android.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_config_iphoneos.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_config_macosx.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_config_minimal.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_config_pandora.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_config_psp.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_config_windows.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_config_winrt.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_config_wiz.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_copying.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_cpuinfo.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_egl.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_endian.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_error.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_events.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_filesystem.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_gamecontroller.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_gesture.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_haptic.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_hints.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_joystick.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_keyboard.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_keycode.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_loadso.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_log.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_main.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_messagebox.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_metal.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_mouse.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_mutex.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_name.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_opengl.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_opengl_glext.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_opengles.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_opengles2.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_opengles2_gl2.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_opengles2_gl2ext.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_opengles2_gl2platform.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_opengles2_khrplatform.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_pixels.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_platform.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_power.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_quit.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_rect.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_render.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_revision.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_rwops.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_scancode.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_sensor.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_shape.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_stdinc.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_surface.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_system.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_syswm.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_test.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_test_assert.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_test_common.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_test_compare.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_test_crc32.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_test_font.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_test_fuzzer.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_test_harness.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_test_images.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_test_log.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_test_md5.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_test_memory.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_test_random.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_thread.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_timer.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_touch.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_types.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_version.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_video.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SDL2\SDL_vulkan.h">
+      <Filter>Pliki nagłówkowe\SDL2</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\source\main.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
