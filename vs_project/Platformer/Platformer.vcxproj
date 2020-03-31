@@ -152,6 +152,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\include\Platformer\renderer.h" />
+    <ClInclude Include="..\..\include\Platformer\sprite.h" />
+    <ClInclude Include="..\..\include\Platformer\window.h" />
     <ClInclude Include="..\..\include\SDL2\begin_code.h" />
     <ClInclude Include="..\..\include\SDL2\close_code.h" />
     <ClInclude Include="..\..\include\SDL2\SDL.h" />
@@ -239,6 +242,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\source\main.cpp" />
+    <ClCompile Include="..\..\source\renderer.cpp" />
+    <ClCompile Include="..\..\source\sprite.cpp" />
+    <ClCompile Include="..\..\source\window.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
