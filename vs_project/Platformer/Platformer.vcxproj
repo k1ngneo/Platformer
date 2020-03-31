@@ -152,6 +152,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\include\Platformer\map.h" />
     <ClInclude Include="..\..\include\SDL2\begin_code.h" />
     <ClInclude Include="..\..\include\SDL2\close_code.h" />
     <ClInclude Include="..\..\include\SDL2\SDL.h" />
@@ -239,6 +240,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\source\main.cpp" />
+    <ClCompile Include="..\..\source\map.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -16,6 +16,9 @@
     <Filter Include="Pliki nagłówkowe\SDL2">
       <UniqueIdentifier>{0f9ab297-0934-4740-96bf-6be6733ced5c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pliki nagłówkowe\Platformer">
+      <UniqueIdentifier>{3ffccfed-580d-44b8-a65f-3954b08a6abd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\SDL2\begin_code.h">
@@ -270,9 +273,15 @@
     <ClInclude Include="..\..\include\SDL2\SDL_vulkan.h">
       <Filter>Pliki nagłówkowe\SDL2</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\Platformer\map.h">
+      <Filter>Pliki nagłówkowe\Platformer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\source\main.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\map.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
   </ItemGroup>

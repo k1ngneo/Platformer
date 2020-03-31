@@ -1,4 +1,5 @@
 #include "SDL2/SDL.h"
+#include "Platformer/map.h"
 
 #ifdef __cplusplus
 extern "C"
