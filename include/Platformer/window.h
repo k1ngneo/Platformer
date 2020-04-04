@@ -8,6 +8,7 @@ public:
 	int w, h;
 	const char* title;
 	SDL_Window* win;
+	SDL_Surface* mainSurface;
 	
 	Window(const char* title, int width, int height);
 	~Window();

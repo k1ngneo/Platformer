@@ -1,9 +1,11 @@
 #include "Platformer/renderer.h"
 
-Renderer::Renderer(SDL_Window* window)
+Renderer::Renderer(Window* window)
 	: window(window)
 {
-	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+	renderer = SDL_CreateRenderer(window->win, -1, SDL_RENDERER_ACCELERATED);
+	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0xff);
+	//SDL_BlendMode(SDL_BLENDMODE_BLEND);
 }
 
 Renderer::~Renderer()
@@ -24,6 +26,8 @@ void Renderer::submit(Sprite* texture) {
 }
 
 void Renderer::flush() {
+	SDL_RenderClear(renderer);
+
 	for (unsigned int i = 0; i < sprites.size(); ++i) {
 		SDL_Texture* texture = sprites[i]->texture;
 		SDL_RenderCopy(renderer, texture, &(sprites[i]->src), &(sprites[i]->dest));

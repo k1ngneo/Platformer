@@ -1,6 +1,8 @@
 #ifndef PLATFORMER_RENDERER_H
 #define PLATFORMER_RENDERER_H
 
+#include "Platformer/window.h"
+
 #include "SDL2/SDL.h"
 #include "Platformer/sprite.h"
 
@@ -9,13 +11,13 @@
 class Renderer {
 public:
 	SDL_Renderer* renderer;
-	SDL_Window* window;
+	Window* window;
 
 private:
 	std::vector<Sprite*> sprites;
 
 public:
-	Renderer(SDL_Window* window);
+	Renderer(Window* window);
 	~Renderer();
 
 	void submit(SDL_Texture* texture, const SDL_Rect& src, const SDL_Rect& dest);

@@ -1,6 +1,8 @@
 #include "Platformer/sprite.h"
 #include "Platformer/renderer.h"
 
+#include "SDL2/SDL_image.h"
+
 #include <string>
 
 Sprite::Sprite() {
@@ -15,16 +17,23 @@ Sprite::~Sprite() {
 
 void Sprite::load(const char* path, Renderer* renderer) {
 	std::string fullpath = std::string(SDL_GetBasePath()) + path;
+	
+	SDL_Surface* sur = nullptr;
 
-	SDL_Surface* loadingSurface = SDL_LoadBMP(fullpath.c_str());
-	if (!loadingSurface) {
-		fprintf(stderr, "Failed to open BMP file '%s'\n", path);
+	sur = IMG_Load(fullpath.c_str());
+	if (!sur) {
+		fprintf(stderr, "Failed to open image '%s'\n", path);
 		return;
 	}
+	else {
+		src = { 0, 0, sur->w, sur->h };
+		dest = { 0, 0, sur->w, sur->h };
+		SDL_SetColorKey(sur, SDL_TRUE, SDL_MapRGBA(sur->format, 0, 0, 0, 0xff));
+	}
 
-	src = { 0, 0, loadingSurface->w, loadingSurface->h };
-	dest = { 0, 0, loadingSurface->w, loadingSurface->h };
-
-	texture = SDL_CreateTextureFromSurface(renderer->renderer, loadingSurface);
-	SDL_FreeSurface(loadingSurface);
+	texture = SDL_CreateTextureFromSurface(renderer->renderer, sur);
+	SDL_FreeSurface(sur);
+	if (texture != nullptr) {
+		SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND);
+	}
 }
