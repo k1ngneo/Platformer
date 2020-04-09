@@ -19,6 +19,12 @@
     <Filter Include="Pliki nagłówkowe\Platformer">
       <UniqueIdentifier>{a0fad52a-a68c-4a60-baa4-6a214c11bfa5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pliki nagłówkowe\Platformer\display">
+      <UniqueIdentifier>{37a2ce9b-0346-4cf6-b9a6-6610fb3391ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\display">
+      <UniqueIdentifier>{ec1d28ba-ec42-41b1-844d-5b8f5f01c269}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\SDL2\begin_code.h">
@@ -273,28 +279,28 @@
     <ClInclude Include="..\..\include\SDL2\SDL_vulkan.h">
       <Filter>Pliki nagłówkowe\SDL2</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Platformer\window.h">
-      <Filter>Pliki nagłówkowe\Platformer</Filter>
+    <ClInclude Include="..\..\include\Platformer\display\window.h">
+      <Filter>Pliki nagłówkowe\Platformer\display</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Platformer\renderer.h">
-      <Filter>Pliki nagłówkowe\Platformer</Filter>
+    <ClInclude Include="..\..\include\Platformer\display\renderer.h">
+      <Filter>Pliki nagłówkowe\Platformer\display</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Platformer\sprite.h">
-      <Filter>Pliki nagłówkowe\Platformer</Filter>
+    <ClInclude Include="..\..\include\Platformer\display\sprite.h">
+      <Filter>Pliki nagłówkowe\Platformer\display</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\source\main.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\source\window.cpp">
-      <Filter>Pliki źródłowe</Filter>
+    <ClCompile Include="..\..\source\display\sprite.cpp">
+      <Filter>Pliki źródłowe\display</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\source\renderer.cpp">
-      <Filter>Pliki źródłowe</Filter>
+    <ClCompile Include="..\..\source\display\window.cpp">
+      <Filter>Pliki źródłowe\display</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\source\sprite.cpp">
-      <Filter>Pliki źródłowe</Filter>
+    <ClCompile Include="..\..\source\display\renderer.cpp">
+      <Filter>Pliki źródłowe\display</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

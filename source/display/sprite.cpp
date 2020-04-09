@@ -1,5 +1,5 @@
-#include "Platformer/sprite.h"
-#include "Platformer/renderer.h"
+#include "Platformer/display/sprite.h"
+#include "Platformer/display/renderer.h"
 
 #include "SDL2/SDL_image.h"
 

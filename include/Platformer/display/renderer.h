@@ -1,10 +1,10 @@
 #ifndef PLATFORMER_RENDERER_H
 #define PLATFORMER_RENDERER_H
 
-#include "Platformer/window.h"
+#include "Platformer/display/window.h"
+#include "Platformer/display/sprite.h"
 
 #include "SDL2/SDL.h"
-#include "Platformer/sprite.h"
 
 #include <vector>
 

@@ -1,7 +1,7 @@
 
-#include "Platformer/window.h"
-#include "Platformer/renderer.h"
-#include "Platformer/sprite.h"
+#include "Platformer/display/window.h"
+#include "Platformer/display/renderer.h"
+#include "Platformer/display/sprite.h"
 
 #include "SDL2/SDL.h"
 #include "SDL2/SDl_image.h"

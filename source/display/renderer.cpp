@@ -1,4 +1,4 @@
-#include "Platformer/renderer.h"
+#include "Platformer/display/renderer.h"
 
 Renderer::Renderer(Window* window)
 	: window(window)
