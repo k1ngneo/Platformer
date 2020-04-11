@@ -1,0 +1,9 @@
+*.exe
+*.iobj
+*.ipdb
+*.pdb
+*.ilk
+*.db
+vs_project/Platformer/.vs/*
+vs_project/Platformer/Debug/
+vs_project/Platformer/Release/
