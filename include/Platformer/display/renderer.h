@@ -3,26 +3,27 @@
 
 #include "Platformer/display/window.h"
 #include "Platformer/display/sprite.h"
+#include "Platformer/display/camera.h"
 
 #include "SDL2/SDL.h"
 
 #include <vector>
 
 class Renderer {
-public:
-	SDL_Renderer* renderer;
-	Window* window;
+	SDL_Renderer* _renderer;
+	Window* _window;
+	Camera* _camera;
 
-private:
-	std::vector<Sprite*> sprites;
+	std::vector<Sprite*> _sprites;
 
 public:
 	Renderer(Window* window);
 	~Renderer();
 
-	void submit(SDL_Texture* texture, const SDL_Rect& src, const SDL_Rect& dest);
-	void submit(Sprite* texture);
+	void submit(Sprite* sprite);
 	void flush();
+
+	friend class Game;
 };
 
 #endif // PLATFORMER_RENDERER_H

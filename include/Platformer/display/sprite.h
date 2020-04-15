@@ -1,5 +1,7 @@
-#ifndef PLATFORMER_TEXTURE_H
-#define PLATFORMER_TEXTURE_H
+#ifndef PLATFORMER_SPRITE_H
+#define PLATFORMER_SPRITE_H
+
+#include "Platformer/display/texture.h"
 
 #include "SDL2/SDL.h"
 
@@ -7,13 +9,13 @@ class Renderer;
 
 class Sprite {
 public:
-	SDL_Texture* texture;
-	SDL_Rect src, dest;
+	Texture* _texture;
+	SDL_Rect _src, _dest;
 
 	Sprite();
 	~Sprite();
 
-	void load(const char* path, Renderer* renderer);
+	void bindTexture(const char* texture);
 };
 
-#endif // PLATFORMER_TEXTURE_H
+#endif // PLATFORMER_SPRITE_H

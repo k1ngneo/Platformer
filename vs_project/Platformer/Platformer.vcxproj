@@ -158,9 +158,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\include\Platformer\app\game.h" />
+    <ClInclude Include="..\..\include\Platformer\display\camera.h" />
     <ClInclude Include="..\..\include\Platformer\display\renderer.h" />
     <ClInclude Include="..\..\include\Platformer\display\sprite.h" />
+    <ClInclude Include="..\..\include\Platformer\display\texture.h" />
     <ClInclude Include="..\..\include\Platformer\display\window.h" />
+    <ClInclude Include="..\..\include\Platformer\logic\game_object.h" />
     <ClInclude Include="..\..\include\SDL2\begin_code.h" />
     <ClInclude Include="..\..\include\SDL2\close_code.h" />
     <ClInclude Include="..\..\include\SDL2\SDL.h" />
@@ -247,6 +251,8 @@
     <ClInclude Include="..\..\include\SDL2\SDL_vulkan.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\source\app\game.cpp" />
+    <ClCompile Include="..\..\source\display\camera.cpp" />
     <ClCompile Include="..\..\source\display\renderer.cpp" />
     <ClCompile Include="..\..\source\display\sprite.cpp" />
     <ClCompile Include="..\..\source\display\window.cpp" />

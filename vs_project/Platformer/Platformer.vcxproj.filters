@@ -25,6 +25,18 @@
     <Filter Include="Pliki źródłowe\display">
       <UniqueIdentifier>{ec1d28ba-ec42-41b1-844d-5b8f5f01c269}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pliki źródłowe\app">
+      <UniqueIdentifier>{c4084efd-a383-4ac8-b880-0c2ac52b8c4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\Platformer\app">
+      <UniqueIdentifier>{419b613b-0a27-42eb-bb5f-551384d13cbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\logic">
+      <UniqueIdentifier>{da3ce2b5-12dd-4132-8cd7-3268001513d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\Platformer\logic">
+      <UniqueIdentifier>{b7962764-b660-4cc3-b370-eded31b6ce8f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\SDL2\begin_code.h">
@@ -288,6 +300,18 @@
     <ClInclude Include="..\..\include\Platformer\display\sprite.h">
       <Filter>Pliki nagłówkowe\Platformer\display</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\Platformer\app\game.h">
+      <Filter>Pliki nagłówkowe\Platformer\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Platformer\logic\game_object.h">
+      <Filter>Pliki nagłówkowe\Platformer\logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Platformer\display\camera.h">
+      <Filter>Pliki nagłówkowe\Platformer\display</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Platformer\display\texture.h">
+      <Filter>Pliki nagłówkowe\Platformer\display</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\source\main.cpp">
@@ -300,6 +324,12 @@
       <Filter>Pliki źródłowe\display</Filter>
     </ClCompile>
     <ClCompile Include="..\..\source\display\renderer.cpp">
+      <Filter>Pliki źródłowe\display</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\app\game.cpp">
+      <Filter>Pliki źródłowe\app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\display\camera.cpp">
       <Filter>Pliki źródłowe\display</Filter>
     </ClCompile>
   </ItemGroup>

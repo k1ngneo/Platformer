@@ -1,37 +1,30 @@
 #include "Platformer/display/renderer.h"
 
 Renderer::Renderer(Window* window)
-	: window(window)
+	: _window(window), _camera(nullptr)
 {
-	renderer = SDL_CreateRenderer(window->win, -1, SDL_RENDERER_ACCELERATED);
-	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0xff);
-	//SDL_BlendMode(SDL_BLENDMODE_BLEND);
+	_renderer = SDL_CreateRenderer(window->win, -1, SDL_RENDERER_ACCELERATED);
+	SDL_SetRenderDrawColor(_renderer, 0, 0, 0, 0xff);
+	_camera = new Camera(-1.0, -1.0, 2.0, 2.0);
 }
 
 Renderer::~Renderer()
 {
-	SDL_DestroyRenderer(renderer);
+	delete _camera;
+	SDL_DestroyRenderer(_renderer);
 }
 
-void Renderer::submit(SDL_Texture* texture, const SDL_Rect& src, const SDL_Rect& dest) {
-	Sprite* newSprite = new Sprite();
-	newSprite->texture = texture;
-	newSprite->src = src;
-	newSprite->dest = dest;
-	sprites.push_back(newSprite);
-}
-
-void Renderer::submit(Sprite* texture) {
-	sprites.push_back(texture);
+void Renderer::submit(Sprite* sprite) {
+	_sprites.push_back(sprite);
 }
 
 void Renderer::flush() {
-	SDL_RenderClear(renderer);
+	SDL_RenderClear(_renderer);
 
-	for (unsigned int i = 0; i < sprites.size(); ++i) {
-		SDL_Texture* texture = sprites[i]->texture;
-		SDL_RenderCopy(renderer, texture, &(sprites[i]->src), &(sprites[i]->dest));
+	for (unsigned int i = 0; i < _sprites.size(); ++i) {
+		// camera handling here I suppose
+		SDL_RenderCopy(_renderer, _sprites[i]->_texture->tex, &(_sprites[i]->_src), &(_sprites[i]->_dest));
 	}
 
-	SDL_RenderPresent(renderer);
+	SDL_RenderPresent(_renderer);
 }
