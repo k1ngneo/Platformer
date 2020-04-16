@@ -1,6 +1,13 @@
 #ifndef PLATFORMER_GAME_H
 #define PLATFORMER_GAME_H
 
+#include "SDL2/SDL.h"
+#include "SDL2/SDL_image.h"
+
+#ifdef __cplusplus
+extern "C"
+#endif
+
 #include "Platformer/display/window.h"
 #include "Platformer/display/renderer.h"
 #include "Platformer/display/camera.h"
@@ -15,6 +22,7 @@
 class Game {
 	static Window* window;
 	static Renderer* renderer;
+	static Camera cam;
 
 	static std::map<std::string, Texture*> textures;
 	static std::vector<GameObject*> gameObjects;
@@ -30,6 +38,7 @@ public:
 
 	static void load_level(const char* lvlname);
 
+	static inline Window* getWindow() { return window; }
 	static Texture* getTexture(const char* name);
 };
 

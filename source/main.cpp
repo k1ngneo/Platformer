@@ -4,17 +4,14 @@
 #include "Platformer/display/renderer.h"
 #include "Platformer/display/sprite.h"
 
-#include "SDL2/SDL.h"
-#include "SDL2/SDl_image.h"
+#include "Platformer/maths/vector.h"
 
-#ifdef __cplusplus
-extern "C"
-#endif
+#include <iostream>
 
 int main(int argc, const char * argv[])
 {
 	Game::init();
-	Game::load_level("thelevel");
+	Game::load_level("world1.txt");
 
 	Game::quit();
 

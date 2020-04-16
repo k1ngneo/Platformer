@@ -37,6 +37,12 @@
     <Filter Include="Pliki nagłówkowe\Platformer\logic">
       <UniqueIdentifier>{b7962764-b660-4cc3-b370-eded31b6ce8f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pliki źródłowe\maths">
+      <UniqueIdentifier>{137c04a9-2fc9-4b7c-8338-f3b0943f3f06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\Platformer\maths">
+      <UniqueIdentifier>{5e98ce6b-442b-4c56-ad39-91e1f3af7cb3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\SDL2\begin_code.h">
@@ -312,6 +318,12 @@
     <ClInclude Include="..\..\include\Platformer\display\texture.h">
       <Filter>Pliki nagłówkowe\Platformer\display</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\Platformer\logic\tile.h">
+      <Filter>Pliki nagłówkowe\Platformer\logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Platformer\maths\vector.h">
+      <Filter>Pliki nagłówkowe\Platformer\maths</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\source\main.cpp">
@@ -331,6 +343,15 @@
     </ClCompile>
     <ClCompile Include="..\..\source\display\camera.cpp">
       <Filter>Pliki źródłowe\display</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\logic\tile.cpp">
+      <Filter>Pliki źródłowe\logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\logic\game_object.cpp">
+      <Filter>Pliki źródłowe\logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\maths\vector.cpp">
+      <Filter>Pliki źródłowe\maths</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

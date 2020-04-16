@@ -11,6 +11,7 @@ public:
 	Vector2f(double x, double y);
 	~Vector2f();
 
+	Vector2f& operator=(const Vector2f& v);
 	friend Vector2f operator+(const Vector2f& v1, const Vector2f& v2);
 	friend Vector2f operator-(const Vector2f& v1, const Vector2f& v2);
 	friend Vector2f operator*(const Vector2f& v, double a);
@@ -34,6 +35,7 @@ public:
 	Vector3f(double x, double y, double z);
 	~Vector3f();
 
+	Vector3f& operator=(const Vector3f& v);
 	friend Vector3f operator+(const Vector3f& v1, const Vector3f& v2);
 	friend Vector3f operator-(const Vector3f& v1, const Vector3f& v2);
 	friend Vector3f operator*(const Vector3f& v, double a);

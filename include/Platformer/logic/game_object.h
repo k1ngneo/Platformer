@@ -4,8 +4,22 @@
 #include "Platformer/display/sprite.h"
 
 class GameObject {
-	Sprite* sprite;
-	double x, y, w, h;
+
+public:
+	enum class Type {
+		NONE = 0, TILE, PLAYER, NON_STATIC
+	} gameObject_type;
+
+private:
+	double _x, _y;
+
+public:
+	GameObject();
+	GameObject(double x, double y);
+	~GameObject();
+
+	void getPos(double& x, double& y);
+	void setPos(double x, double y);
 };
 
 #endif // PLATFORMER_GAME_OBJECT_H

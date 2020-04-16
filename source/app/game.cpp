@@ -1,14 +1,17 @@
 #include "Platformer/app/game.h"
 
 #include "Platformer/display/window.h"
+#include "Platformer/logic/tile.h"
 
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_image.h"
 
 #include <iostream>
+#include <fstream>
 
 Window* Game::window = nullptr;
 Renderer* Game::renderer = nullptr;
+Camera Game::cam(0.0, 0.0, 0.0, 0.0);
 
 std::map<std::string, Texture*> Game::textures;
 std::vector<GameObject*> Game::gameObjects;
@@ -61,6 +64,12 @@ void Game::init() {
 
 	window = new Window("Platformer", 900, 600);
 	renderer = new Renderer(window);
+	renderer->_camera = &cam;
+
+	cam._win_w = &(window->w);
+	cam._win_h = &(window->h);
+
+	cam.setScale(3.0);
 }
 
 void Game::quit() {
@@ -72,33 +81,63 @@ void Game::quit() {
 		delete i->second;
 	}
 
-	for (auto i = gameObjects.begin(); i != gameObjects.end(); ++i) {
-		delete (*i);
-		gameObjects.erase(i);
+	for (unsigned int i = 0; i < gameObjects.size(); ++i) {
+		delete gameObjects[i];
 	}
+	gameObjects.clear();
 
 	SDL_Quit();
 	IMG_Quit();
 }
 
 void Game::load_level(const char* lvlname) {
+	std::string fullLvlPath = std::string(SDL_GetBasePath()) + "worlds/" + lvlname;
+	unsigned int world_width, world_height;
+
 	load_texture("ludek.bmp");
 	load_texture("ludek.png");
+	load_texture("grass_tile.png");
 
-	Sprite* sp1 = new Sprite();
-	Sprite* sp2 = new Sprite();
-	sp1->bindTexture("ludek.bmp");
-	sp2->bindTexture("ludek.png");
+	Sprite ludek, clouds;
+	ludek.bindTexture("ludek.bmp");
+	ludek.setPos({ 0.0, 0.0 });
+	ludek.setDim({ 30.0, 20.0 });
+	renderer->submit(&ludek);
+	clouds.bindTexture("ludek.png");
+	clouds.setPos({ -10.0, 0.0 });
+	clouds.setDim({ 50.0, 30.0 });
+	renderer->submit(&clouds);
 
-	sp1->_dest = sp1->_src = {0, 0, (int)sp1->_texture->w, (int)sp1->_texture->h};
-	sp2->_dest = sp2->_src = {0, 0, (int)sp2->_texture->w, (int)sp2->_texture->h};
-	
-	renderer->submit(sp1);
-	renderer->submit(sp2);
+	std::fstream fworld;
+	fworld.open(fullLvlPath.c_str(), std::ios::in);
+	if (fworld.is_open()) {
+		fworld >> world_width >> world_height;
+
+		Tile* newtile;
+		int type = 0;
+		for (unsigned int i = 0; i < world_height; ++i) {
+			for (unsigned int j = 0; j < world_width; ++j) {
+				fworld >> type;
+				if (type == 0) {
+					continue;
+				}
+				else {
+					newtile = new Tile(j * 1.0, i * 1.0, (Tile::Type)type);
+					renderer->submit(&(newtile->_sprite));
+					gameObjects.push_back(newtile);
+				}
+			}
+		}
+
+		fworld.close();
+	}
+	else {
+		std::cerr << "Failed to open a world file \"" << lvlname << "\"\n";
+	}
+
+	std::cout << "Number of game objects: " << gameObjects.size() << "\n";
 
 	game_loop();
-
-	delete sp1, sp2;
 }
 
 Texture* Game::getTexture(const char* name) {

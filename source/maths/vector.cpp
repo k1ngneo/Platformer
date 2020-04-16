@@ -11,6 +11,11 @@ Vector2f::Vector2f(double x, double y)
 Vector2f::~Vector2f()
 {}
 
+Vector2f& Vector2f::operator=(const Vector2f& v) {
+	this->x = v.x;
+	this->y = v.y;
+	return (*this);
+}
 Vector2f operator+(const Vector2f& v1, const Vector2f& v2) {
 	Vector2f result;
 	result.x = v1.x + v2.x;
@@ -86,6 +91,12 @@ Vector3f::Vector3f(double x, double y, double z)
 Vector3f::~Vector3f()
 {}
 
+Vector3f& Vector3f::operator=(const Vector3f& v) {
+	this->x = v.x;
+	this->y = v.y;
+	this->z = v.z;
+	return (*this);
+}
 Vector3f operator+(const Vector3f& v1, const Vector3f& v2) {
 	Vector3f result;
 	result.x = v1.x + v2.x;
