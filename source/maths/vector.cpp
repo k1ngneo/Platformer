@@ -1,5 +1,73 @@
 #include "Platformer/maths/vector.h"
 
+
+Vector2i::Vector2i() {
+	this->x = this->y = 0;
+}
+Vector2i::Vector2i(int x, int y) {
+	this->x = x;
+	this->y = y;
+}
+Vector2i::~Vector2i()
+{}
+
+Vector2i& Vector2i::operator=(const Vector2i& v) {
+	x = v.x;
+	y = v.y;
+	return *this;
+}
+Vector2i operator+(const Vector2i& v1, const Vector2i& v2) {
+	Vector2i result;
+	result.x = v1.x + v2.x;
+	result.y = v1.y + v2.y;
+	return result;
+}
+Vector2i operator-(const Vector2i& v1, const Vector2i& v2) {
+	Vector2i result;
+	result.x = v1.x - v2.x;
+	result.y = v1.y - v2.y;
+	return result;
+}
+Vector2i operator*(const Vector2i& v, int a) {
+	Vector2i result;
+	result.x = v.x * a;
+	result.y = v.y * a;
+	return result;
+}
+Vector2i operator*(int a, const Vector2i& v) {
+	return (v * a);
+}
+Vector2i operator*(const Vector2i& v1, const Vector2i& v2) {
+	Vector2i result;
+	result.x = v1.x * v2.x;
+	result.y = v1.y * v2.y;
+	return result;
+}
+
+const Vector2i& operator+=(Vector2i& v1, const Vector2i& v2) {
+	v1 = v1 + v2;
+	return v1;
+}
+const Vector2i& operator-=(Vector2i& v1, const Vector2i& v2) {
+	v1 = v1 - v2;
+	return v1;
+}
+const Vector2i& operator*=(Vector2i& v1, const Vector2i& v2) {
+	v1 = v1 * v2;
+	return v1;
+}
+const Vector2i& operator*=(Vector2i& v, int a) {
+	v = v * a;
+	return v;
+}
+
+bool operator==(const Vector2i& v1, const Vector2i& v2) {
+	return (v1.x == v2.x && v1.y == v2.y);
+}
+std::ostream& operator<<(std::ostream& os, const Vector2i& vector) {
+	return os << "[" << vector.x << ", " << vector.y << "]\n";
+}
+
 Vector2f::Vector2f()
 	: x(0.0), y(0.0)
 {}

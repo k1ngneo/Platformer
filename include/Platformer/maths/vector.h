@@ -3,6 +3,30 @@
 
 #include <iostream>
 
+class Vector2i {
+public:
+	double x, y;
+
+	Vector2i();
+	Vector2i(int x, int y);
+	~Vector2i();
+
+	Vector2i& operator=(const Vector2i& v);
+	friend Vector2i operator+(const Vector2i& v1, const Vector2i& v2);
+	friend Vector2i operator-(const Vector2i& v1, const Vector2i& v2);
+	friend Vector2i operator*(const Vector2i& v, int a);
+	friend Vector2i operator*(int a, const Vector2i& v);
+	friend Vector2i operator*(const Vector2i& v1, const Vector2i& v2);
+
+	friend const Vector2i& operator+=(Vector2i& v1, const Vector2i& v2);
+	friend const Vector2i& operator-=(Vector2i& v1, const Vector2i& v2);
+	friend const Vector2i& operator*=(Vector2i& v1, const Vector2i& v2);
+	friend const Vector2i& operator*=(Vector2i& v, int a);
+
+	friend bool operator==(const Vector2i& v1, const Vector2i& v2);
+	friend std::ostream& operator<<(std::ostream& os, const Vector2i& vector);
+};
+
 class Vector2f {
 public:
 	double x, y;
