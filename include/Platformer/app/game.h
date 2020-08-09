@@ -4,9 +4,11 @@
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_image.h"
 
-#ifdef __cplusplus
-extern "C"
-#endif
+//#ifdef __cplusplus
+//extern "C"
+//#endif
+
+#include "Platformer/app/event_handler.h"
 
 #include "Platformer/display/window.h"
 #include "Platformer/display/renderer.h"
@@ -27,6 +29,8 @@ class Game {
 	static std::map<std::string, Texture*> textures;
 	static std::vector<GameObject*> gameObjects;
 
+	static bool running;
+
 private:
 	static void game_loop();
 
@@ -40,6 +44,8 @@ public:
 
 	static inline Window* getWindow() { return window; }
 	static Texture* getTexture(const char* name);
+
+	friend void EventHandler::pollEvents();
 };
 
 #endif // PLATFORMER_GAME_H

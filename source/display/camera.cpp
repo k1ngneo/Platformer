@@ -36,6 +36,6 @@ void Camera::getTranPos(Sprite& sp, SDL_Rect& dest) {
 
 	dest.x = (int)((obj.x - _x) / _w * (double)(*_win_w));
 	dest.y = (int)((obj.y - _y) / _h * (double)(*_win_h));
-	dest.w = (int)(dim.x / _w * (double)(*_win_w));
-	dest.h = (int)(dim.y / _h * (double)(*_win_h));
+	dest.w = (int)(dim.x / _w * (double)(*_win_w)) + 1;
+	dest.h = (int)(dim.y / _h * (double)(*_win_h)) + 1;
 }

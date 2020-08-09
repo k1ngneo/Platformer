@@ -6,16 +6,18 @@
 class Game;
 
 class Window {
-	int w, h;
-	const char* title;
-	SDL_Window* win;
-	SDL_Surface* mainSurface;
+	int _w, _h;
+	const char* _title;
+	SDL_Window* _win;
+	SDL_Surface* _mainSurface;
 	
 public:
 	Window(const char* title, int width, int height);
 	~Window();
 
-	inline SDL_Window* getWindow() { return win; }
+	void resize(int width, int height);
+
+	inline SDL_Window* getWindow() { return _win; }
 
 	friend Game;
 };

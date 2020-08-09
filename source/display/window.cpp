@@ -3,17 +3,17 @@
 #include "iostream"
 
 Window::Window(const char* title, int width, int height)
-	: w(width), h(height),
-	title(title),
-	mainSurface(nullptr)
+	: _w(width), _h(height),
+	_title(title),
+	_mainSurface(nullptr)
 {
-	win = SDL_CreateWindow(	title,
+	_win = SDL_CreateWindow(	title,
 							SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-							w, h,
+							_w, _h,
 							SDL_WINDOW_RESIZABLE);
 
-	if (win != nullptr) {
-		mainSurface = SDL_GetWindowSurface(win);
+	if (_win != nullptr) {
+		_mainSurface = SDL_GetWindowSurface(_win);
 	}
 	else {
 		std::cerr << "Failed to create a game window!\n";
@@ -21,6 +21,13 @@ Window::Window(const char* title, int width, int height)
 }
 
 Window::~Window() {
-	SDL_DestroyWindow(win);
-	win = nullptr;
+	SDL_DestroyWindow(_win);
+	_win = nullptr;
+}
+
+void Window::resize(int width, int height) {
+	_w = width;
+	_h = height;
+
+	
 }

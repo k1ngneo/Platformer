@@ -1,5 +1,6 @@
 #include "Platformer/app/game.h"
 
+#include "Platformer/app/event_handler.h"
 #include "Platformer/display/window.h"
 #include "Platformer/logic/tile.h"
 
@@ -13,19 +14,24 @@ Window* Game::window = nullptr;
 Renderer* Game::renderer = nullptr;
 Camera Game::cam(0.0, 0.0, 0.0, 0.0);
 
+bool Game::running = true;
+
 std::map<std::string, Texture*> Game::textures;
 std::vector<GameObject*> Game::gameObjects;
 
 void Game::game_loop() {
-	SDL_Event evnt;
-	bool running = true;
 	while (running)
 	{
-		SDL_PollEvent(&evnt);
+		EventHandler::pollEvents();
 
-		if (evnt.type == SDL_QUIT)
-		{
-			running = false;
+		if (EventHandler::isKeyPressed(KB_ESCAPE)) {
+			Game::quit();
+			exit(0);
+		}
+
+		if (EventHandler::isKeyPressed(KB_F2)) {
+			Vector2i pos = EventHandler::getMousePosition();
+			std::cout << pos.x << " " << pos.y << std::endl;
 		}
 
 		renderer->flush();
@@ -62,12 +68,14 @@ void Game::init() {
 	SDL_Init(SDL_INIT_EVERYTHING);
 	IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG);
 
+	EventHandler::init();
+
 	window = new Window("Platformer", 900, 600);
 	renderer = new Renderer(window);
 	renderer->_camera = &cam;
 
-	cam._win_w = &(window->w);
-	cam._win_h = &(window->h);
+	cam._win_w = &(window->_w);
+	cam._win_h = &(window->_h);
 
 	cam.setScale(3.0);
 }
@@ -97,6 +105,7 @@ void Game::load_level(const char* lvlname) {
 	load_texture("ludek.bmp");
 	load_texture("ludek.png");
 	load_texture("grass_tile.png");
+	load_texture("dirt_tile.png");
 
 	Sprite ludek, clouds;
 	ludek.bindTexture("ludek.bmp");
