@@ -5,7 +5,7 @@
 
 class Vector2i {
 public:
-	double x, y;
+	int x, y;
 
 	Vector2i();
 	Vector2i(int x, int y);

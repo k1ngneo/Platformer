@@ -12,16 +12,22 @@
 
 Window* Game::window = nullptr;
 Renderer* Game::renderer = nullptr;
+FPSCounter Game::fpsCounter;
 Camera Game::cam(0.0, 0.0, 0.0, 0.0);
 
 bool Game::running = true;
 
 std::map<std::string, Texture*> Game::textures;
-std::vector<GameObject*> Game::gameObjects;
+SpatialHash Game::gameObjects;
+
+Player Game::player;
 
 void Game::game_loop() {
 	while (running)
 	{
+		fpsCounter.countFPS();
+		fpsCounter.capFPS(60);
+
 		EventHandler::pollEvents();
 
 		if (EventHandler::isKeyPressed(KB_ESCAPE)) {
@@ -33,6 +39,16 @@ void Game::game_loop() {
 			Vector2i pos = EventHandler::getMousePosition();
 			std::cout << pos.x << " " << pos.y << std::endl;
 		}
+
+		if (EventHandler::isKeyPressed(KB_A)) {
+			player.moveLeft();
+		}
+
+		if (EventHandler::isKeyPressed(KB_D)) {
+			player.moveRight();
+		}
+
+		//std::cout << "fps: " << fpsCounter.getFPS() << std::endl;
 
 		renderer->flush();
 	}
@@ -89,9 +105,6 @@ void Game::quit() {
 		delete i->second;
 	}
 
-	for (unsigned int i = 0; i < gameObjects.size(); ++i) {
-		delete gameObjects[i];
-	}
 	gameObjects.clear();
 
 	SDL_Quit();
@@ -106,6 +119,9 @@ void Game::load_level(const char* lvlname) {
 	load_texture("ludek.png");
 	load_texture("grass_tile.png");
 	load_texture("dirt_tile.png");
+	load_texture("hero.png");
+
+	player.bindTexture("hero.png");
 
 	Sprite ludek, clouds;
 	ludek.bindTexture("ludek.bmp");
@@ -117,10 +133,16 @@ void Game::load_level(const char* lvlname) {
 	clouds.setDim({ 50.0, 30.0 });
 	renderer->submit(&clouds);
 
+	player.bindToRenderer(renderer);
+
 	std::fstream fworld;
 	fworld.open(fullLvlPath.c_str(), std::ios::in);
 	if (fworld.is_open()) {
 		fworld >> world_width >> world_height;
+		
+		float playerX, playerY;
+		fworld >> playerX >> playerY;
+		player.setPos(Vector2f(playerX, playerY));
 
 		Tile* newtile;
 		int type = 0;
@@ -131,9 +153,9 @@ void Game::load_level(const char* lvlname) {
 					continue;
 				}
 				else {
-					newtile = new Tile(j * 1.0, i * 1.0, (Tile::Type)type);
+					newtile = new Tile(Vector2f(j * 1.0, i * 1.0), (Tile::Type)type);
 					renderer->submit(&(newtile->_sprite));
-					gameObjects.push_back(newtile);
+					gameObjects.add(newtile);
 				}
 			}
 		}

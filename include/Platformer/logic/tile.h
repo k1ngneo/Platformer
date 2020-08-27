@@ -16,8 +16,11 @@ private:
 	Sprite _sprite;
 
 public:
-	Tile(double x, double y, Type tile_type);
+	Tile(const Vector2f& pos, Type tile_type);
 	~Tile();
+
+	inline const Vector2f& getPos() { return _sprite.getPos(); }
+	inline const Vector2f& getDim() { return _sprite.getDim(); }
 
 	friend void Game::load_level(const char* lvlname);
 };

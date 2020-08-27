@@ -9,6 +9,7 @@
 //#endif
 
 #include "Platformer/app/event_handler.h"
+#include "Platformer/app/fps_counter.h"
 
 #include "Platformer/display/window.h"
 #include "Platformer/display/renderer.h"
@@ -16,6 +17,8 @@
 #include "Platformer/display/texture.h"
 
 #include "Platformer/logic/game_object.h"
+#include "Platformer/logic/player.h"
+#include "Platformer/logic/spatial_hash.h"
 
 #include <string>
 #include <vector>
@@ -24,10 +27,14 @@
 class Game {
 	static Window* window;
 	static Renderer* renderer;
+	static FPSCounter fpsCounter;
 	static Camera cam;
 
 	static std::map<std::string, Texture*> textures;
-	static std::vector<GameObject*> gameObjects;
+	//static std::vector<GameObject*> gameObjects;
+	static SpatialHash gameObjects;
+
+	static Player player;
 
 	static bool running;
 
